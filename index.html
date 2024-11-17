@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>TANATE_FAMZ</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/41ffab769c284355b1f7c0a478baa669.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Gaya dasar untuk link sosial */
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      border-radius: 50%;
+      background-color: #f1f1f1;
+      /* Warna latar default */
+      color: black;
+      /* Warna ikon default */
+      text-decoration: none;
+      transition: all 1.3s ease;
+      /* Animasi transisi */
+    }
+
+    /* Efek hover */
+    .social-links a:hover {
+      background-color: #007bff;
+      /* Warna latar saat hover */
+      color: white;
+      /* Warna ikon saat hover */
+      transform: scale(1.1);
+      /* Memperbesar ikon sedikit */
+    }
+
+    /* Gaya hover untuk ikon di dalam <a> */
+    .info-item a:hover {
+      color: brown;
+      /* Ubah warna ikon saat hover */
+      transform: scale(0.5);
+      /* Perbesar sedikit */
+      transition: all 2.5s ease;
+      /* Animasi transisi halus */
+    }
+
+    /* Tambahkan efek hover pada seluruh elemen info-item */
+    .info-item:hover {
+      background-color: #f9f9f9;
+      /* Latar belakang berubah saat hover */
+      border-radius: 8px;
+      /* Membuat sudut melengkung */
+      padding: 10px;
+      /* Memberikan ruang ekstra */
+      transition: background-color 2.5s ease;
+    }
+
+
+    /* Container Bingkai */
+    .image-frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+      /* Lebar bingkai */
+      height: 300px;
+      /* Tinggi bingkai */
+      background-color: brown;
+      /* Warna latar bingkai */
+      border: 8px solid brown;
+      /* Warna dan ketebalan border bingkai */
+      border-radius: 50%;
+      /* Membuat bingkai berbentuk oval */
+      overflow: hidden;
+      /* Memastikan gambar tidak keluar dari bingkai */
+      margin: auto;
+      /* Memposisikan bingkai di tengah */
+    }
+
+    /* Gaya Gambar */
+    .image-frame img {
+      width: 100%;
+      /* Gambar memenuhi bingkai */
+      height: 100%;
+      /* Sesuai dengan tinggi bingkai */
+      object-fit: cover;
+      /* Memastikan gambar proporsional */
+    }
+
+
+    .sitename {
+      font-weight: bold;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 25px;
+      transition: color 1.3s, transform 1.3s;
+      /* Menambahkan efek transisi */
+    }
+
+    .sitename:hover {
+      color: brown;
+      /* Mengubah warna teks saat hover */
+      background-color: white;
+      border-radius: 10px;
+      transform: scale(1.5);
+      /* Membuat teks sedikit membesar */
+      text-shadow: 10px 7px 5px rgba(0, 0, 0, 0.3);
+      /* Memberikan efek bayangan */
+    }
+
+
+    /* hover untuk nama ogas */
+
+    h2 {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: bold;
+      color: brown;
+      position: relative;
+      display: inline-block;
+      transition: all 1.3s ease-in-out;
+    }
+
+    h2:hover {
+      color: #8b0000;
+      /* Warna menjadi lebih gelap saat hover */
+      transform: scale(1.2);
+      /* Sedikit membesarkan teks */
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, white, brown);
+      bottom: -3px;
+      /* Jarak garis dari teks */
+      left: 0;
+      border-radius: 5px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 1.2s ease-in-out;
+    }
+
+    h2:hover::after {
+      transform: scaleX(1);
+      /* Animasi garis bawah muncul saat hover */
+    }
+
+    h4:hover::after {
+      transform: scaleX(1);
+      /* Animasi garis bawah muncul saat hover */
+    }
+
+
+    /* Styling untuk image frame */
+    .image-frame {
+      display: inline-block;
+      overflow: hidden;
+      /* Agar gambar tidak keluar dari container */
+      border-radius: 60%;
+      /* Membuat gambar berbentuk oval */
+      width: 450px;
+      /* Ukuran container gambar */
+      height: 310px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Gambar di dalam frame */
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.3s ease;
+    }
+
+    /* Efek Hover */
+    .image-frame:hover {
+      transform: scale(1.1);
+      /* Zoom pada frame */
+      box-shadow: 0 100px 100px rgba(20, 40, 60, 80.3);
+      /* Tambahkan bayangan */
+    }
+
+    .image-frame:hover img {
+      transform: scale(1.3);
+      /* Zoom pada gambar di dalam frame */
+    }
+
+
+    /* Kontainer gambar */
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 70px;
+      transition: transform 1.3s ease, box-shadow 3.3s ease;
+    }
+
+    /* Gambar di dalam kontainer */
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 70px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Efek hover pada gambar */
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+      /* Zoom-in */
+    }
+
+    /* Informasi overlay */
+    .portfolio-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(139, 69, 19, 0.9);
+      /* Semi-transparan coklat */
+      border-radius: 50px;
+      padding: 15px;
+      text-align: center;
+      transform: translateY(100%);
+      /* Tersembunyi di luar layar */
+      transition: transform 0.3s ease;
+    }
+
+    /* Efek hover untuk menampilkan informasi */
+    .portfolio-item:hover .portfolio-info {
+      transform: translateY(0);
+      /* Tampilkan informasi */
+    }
+
+    /* Teks dan ikon */
+    .portfolio-info h4 {
+      color: white;
+      margin: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    .portfolio-info a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    /* Efek hover pada teks/ikon */
+    .portfolio-info a:hover {
+      color: #ffd700;
+      /* Warna kuning keemasan */
+    }
+
+    .portfolio-item:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      /* Tambahkan bayangan */
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top" style="background-color: black;">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/IMG-20240113-WA0012.jpg" alt=""> -->
+        <h4 class="sitename"
+          style="font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 25px;">
+          TANATE_FAMZ</h4>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="background-color: black;">
+        <ul>
+          <li><a href="#hero" class="active"
+              style="background-color:brown; color: white; border-radius: 20px;">Home<br></a></li>
+          <li><a href="#about" style="background-color:black; color: white; border-radius: 20px;">About</a></li>
+          <li><a href="#resume" style="background-color:brown; color: white; border-radius: 20px;">Resume</a></li>
+          <li><a href="#portfolio" style="background-color:black; color: white; border-radius: 20px;">Portfolio</a></li>
+          <li><a href="#contact" style="background-color:brown; color: white; border-radius: 20px;">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/IMG-20230420-WA0126.jpg" alt="" data-aos="fade-in">
+
+      <div class="container d-flex flex-column align-items-center justify-content-center text-center" data-aos="fade-in"
+        data-aos-delay="100">
+        <h2
+          style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold; color: brown;">
+          OgAs</h2>
+        <p><span class="typed sitename" data-typed-items="Saya Adalah, Seorang Developer"
+            style="background-color: black; border-radius: 16px;"></span></p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="image-frame">
+                <img src="assets/img/IMG-20231123-WA0003.jpg" alt="Gambar Oval" class="img-fluid">
+              </div>
+              <div class="col-lg-7 about-info">
+                <!-- <p><strong>Name: </strong> <span>Ogas</span></p>
+                <p><strong>Profile: </strong> <span>Developer</span></p>
+                <p><strong>Email: </strong> <span>oritanate319@gmail.com</span></p>
+                <p><strong>Phone: </strong> <span>0821-9138-7026</span></p> -->
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h3 class="resume-title"
+                style="color: brown; position: relative; text-align: center; font-weight: bold; padding: 15px;">
+                Skills
+              </h3>
+              <div style="width: 100%; text-align: center; position: relative;">
+                <hr style="border: none; border-top: 2px solid brown; margin: 10px auto; width: 60%;">
+                <span
+                  style="position: absolute; background: #fff; color: black; padding: 0 10px; font-size: 14px; top: -19px;">
+                  Kemampuan
+                </span>
+              </div>
+
+
+              <div class="progress">
+                <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div style="background-color: brown; border-radius: 20px;" class="progress-bar" role="progressbar"
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>CSS</span> <i class="val">66%</i></span>
+                <div class="progress-bar-wrap">
+                  <div style="background-color: black; border-radius: 20px;" class="progress-bar" role="progressbar"
+                    aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>JavaScript</span> <i class="val">50%</i></span>
+                <div class="progress-bar-wrap">
+                  <div style="background-color: brown; border-radius: 20px;" class="progress-bar" role="progressbar"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>PHP</span> <i class="val">70%</i></span>
+                <div class="progress-bar-wrap">
+                  <div style="background-color: black; border-radius: 20px;" class="progress-bar" role="progressbar"
+                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </div><!-- End Skills Item -->
+
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <h2
+                style="font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 40px; color: black;">
+                ABOUT</h2>
+              <p style="font-weight: bold;">
+                ----------saya adalah seorang developer----------
+              </p>
+              <p style="font-weight: bold;">
+                <!-- Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis
+                porttitor volutpat. Vestibulum
+                ac diam sit amet quam vehicula elementum sed sit amet dui. porttitor at sem. -->
+              </p>
+              <p style="font-weight: bold;">
+                <!-- Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+                Nulla porttitor accumsan
+                tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container text-center" data-aos="fade-in">
+        <h2
+          style="font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 40px; text-align: center; position: relative; color: black;">
+          RESUME
+        </h2>
+        <hr style="border: 3px solid brown; width: 70%; margin: 10px auto;">
+
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <h3 class="resume-title" style="color: brown; position: relative; text-align: center; font-weight: bold;">
+              Education
+            </h3>
+            <div style="width: 100%; text-align: center; position: relative;">
+              <hr style="border: none; border-top: 2px solid brown; margin: 10px auto; width: 60%;">
+              <span
+                style="position: absolute; background: #fff; color: brown; padding: 0 10px; font-size: 14px; top: -17px;">
+                Pendidikan
+              </span>
+            </div>
+
+            <!-- TK -->
+            <div class="resume-item">
+              <h4 style="background-color: black; border-radius: 5px; color: white;">KINDERGARTEN</h4>
+              <h5 style="font-weight: bold;">2007 -2008</h5>
+              <p><em
+                  style="color: brown; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PGRI
+                  USLIAPAN
+                  KINDERGARTEN</em></p>
+              <p></p>
+            </div><!-- Edn Resume Item -->
+
+            <!-- SEKOLAH DASAR -->
+            <div class="resume-item">
+              <h4 style="background-color: black; border-radius: 5px; color: white;">ELEMENTARY SCHOOL</h4>
+              <h5 style="font-weight: bold;">2009 - 2014</h5>
+              <p><em
+                  style="color: brown; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">YPPK
+                  DB JB SITANALA PRIMARY SCHOOL, CENTRAL MALUKU</em></p>
+              <p></p>
+            </div><!-- Edn Resume Item -->
+
+            <!-- SEKOLAH MENENGAH PERTAMA -->
+            <div class="resume-item">
+              <h4 style="background-color: black; border-radius: 5px; color: white;">JUNIOR HIGH SCHOOL</h4>
+              <h5 style="font-weight: bold;">2015 - 2017</h5>
+              <p><em
+                  style="color: brown; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">STATE
+                  FIRST TEACHING SCHOOL 2 TEON NILA SERUA</em></p>
+              <p></p>
+            </div><!-- Edn Resume Item -->
+
+            <!-- SEKOLAH MENENGAH ATAS -->
+            <div class="resume-item">
+              <h4 style="background-color: black; border-radius: 5px; color: white;">SENIOR HIGH SCHOOL</h4>
+              <h5 style="font-weight: bold;">2018 - 2020</h5>
+              <p><em
+                  style="color: brown; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">STATE
+                  HIGH SCHOOL 17 CENTRAL MALUKU</em></p>
+              <p></p>
+            </div><!-- Edn Resume Item -->
+
+            <!-- KULIAH -->
+            <div class="resume-item">
+              <h4 style="background-color: black; border-radius: 5px; color: white;">BACHELOR OF COMPUTER SCIENCE</h4>
+              <h5 style="font-weight: bold;">2020 - 2024</h5>
+              <p><em
+                  style="color: brown; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">AMBON
+                  COMPUTER SCIENCE INSTITUTE</em></p>
+              <p></p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+
+    </section><!-- /Stats Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container text-center" data-aos="fade-up">
+        <h2
+          style="font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 40px; color: black;">
+          PORTOFOLIO</h2>
+        <hr style="border: 3px solid brown; width: 70%; margin: 10px auto;">
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title" style="color: brown; position: relative; text-align: center; font-weight: bold;">
+              Galery
+            </h3>
+            <div style="width: 100%; text-align: center; position: relative;">
+              <hr style="border: none; border-top: 2px solid brown; margin: 10px auto; width: 60%;">
+              <span
+                style="position: absolute; background: #fff; color: brown; padding: 0 10px; font-size: 14px; top: -10px;">
+                Musik/Video
+              </span>
+            </div>
+
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/FOTO TOTON.jpg" class="img-fluid" alt=""
+                style="height: 400px; width: 100%; border-radius: 70px;">
+              <div class="portfolio-info" style="border-radius: 50px; background-color: brown;">
+                <h4 style="color: white;">TOTON_CARIBO</h4>
+                <!-- <p style="color: white;">Lorem ipsum, dolor sit amet consectetur</p> -->
+                <a href="assets/music/VIDEO TOTON CARIBO BOLA BOLA.mp4" title="(BABY BOLA BOLA)"
+                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                    class="bi bi-film"></i></a>
+
+                <a href="https://www.youtube.com/watch?v=uLO_qBaS0VI&pp=ygUReW9jaGVuIGFtb3MgdGFueWE%3D"
+                  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/FOTO FRESLY.jpg" class="img-fluid" alt=""
+                style="height: 400px; width: 100%; border-radius: 70px;">
+              <div class="portfolio-info" style="border-radius: 50px; background-color: brown;">
+                <h4 style="color: white;">FRESLY_NIKIJULUW</h4>
+                <!-- <p style="color: white;">Lorem ipsum, dolor sit amet consectetur</p> -->
+                <a href="assets/music/VIDEO FRESLY BETA SENG MARAH.mp4" title="(BETA SENG MARAH)"
+                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                    class="bi bi-film"></i></a>
+
+                <a href="assets/music/VIDEO FRESLY TAMANG PUNG KISAH.mp4" title="(TAMANG PUNG KISAH)"
+                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                    class="bi bi-film"></i></a>
+
+                <a href="https://www.youtube.com/watch?v=uLO_qBaS0VI&pp=ygUReW9jaGVuIGFtb3MgdGFueWE%3D"
+                  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="assets/img/FOTO YOCHEN.jpg" class="img-fluid" alt=""
+                style="height: 400px; width: 100%; border-radius: 70px;">
+              <div class="portfolio-info" style="border-radius: 50px; background-color: brown;">
+                <h4 style="color: white;">YOCHEN_AMOS</h4>
+                <!-- <p style="color: white;">Lorem ipsum, dolor sit amet consectetur</p> -->
+                <a href="assets/music/VIDEO YOCHEN TANYA.mp4" title="(TANYA)" data-gallery="portfolio-gallery-branding"
+                  class="glightbox preview-link"><i class="bi bi-film"></i></a>
+
+                <a href="https://www.youtube.com/watch?v=uLO_qBaS0VI&pp=ygUReW9jaGVuIGFtb3MgdGFueWE%3D"
+                  title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+
+            </div>
+
+          </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Pricing Section -->
+
+
+    <!-- Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container text-center" data-aos="fade-in">
+        <h2
+          style="font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 40px; color: black;">
+          CONTACT</h2>
+        <hr style="border: 3px solid brown; width: 70%; margin: 10px auto;">
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200"
+          style="background-color: black; border-radius: 50px;">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <a href="https://maps.app.goo.gl/cu1cbhYuFZQfJFAb8" target="_blank"
+                  style="text-decoration: none; color: red;">
+                  <i class="bi bi-geo-alt" style="background-color: white; color: brown; border-color: brown;"></i>
+                </a>
+                <div>
+                  <h3>Address</h3>
+                  <p style="color: brown;">Jln. lintas-seram, 97558</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <a href="tel:+6282191387026" style="text-decoration: none; color: green;">
+                  <i class="bi bi-telephone flex-shrink-0"
+                    style="background-color: white; color: brown; border-color: brown;"></i>
+                </a>
+                <div>
+                  <h3>Phone</h3>
+                  <p style="color: brown;">0821-9138-7026</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <a href="mailto:oritanate319@gmail.com" style="text-decoration: none; color: blue;">
+                  <i class="bi bi-envelope flex-shrink-0"
+                    style="background-color: white; color: brown; border-color: brown;"></i>
+                </a>
+                <div>
+                  <h3>Email</h3>
+                  <p style="color: brown;">oritanate319@gmail.com</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer" style="background-color: brown;">
+
+    <div class="container">
+      <div class="copyright text-center">
+        <p class="text-white" style="color:black; font-weight: bold; font-size: 13px;"> © <span class="text-white"
+            style="color:black; font-weight: bold; font-size: 13px;">Copyright</span> <strong class="px-1 sitename"
+            style="font-weight: bold; font-size: 17px;" class="text-white">OGAS</strong> <span class="text-white">All
+            Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.facebook.com/OgasTanate20?mibextid=ZbWKwL" target="_blank"
+          style="background-color: brown; color: white;"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/ogstnate?igsh=ZGs4azA0d3FnbjJ5" target="_blank"
+          style="background-color: brown; color: white;"><i class="bi bi-instagram"></i></a>
+
+        <!-- WhatsApp logo added here -->
+        <a href="https://wa.me/6282191387026" target="_blank" style="background-color: brown; color: white;">
+          <i class="bi bi-whatsapp" style="font-size: 1.5em;"></i>
+        </a>
+
+
+      </div>
+      <div class="credits text-white" style="font-size: 13px;">
+        Designed by <h2 href="#" target="_blank" class="text-white"
+          style="color:black; font-weight: bold; font-size: 15px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          TANATE_FAMZ</h2> <span id="currentYear" class="sitename"
+          style="color:black; font-weight: bold; font-size: 0px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"></span>
+        <div id="dateTime" class="sitename"
+          style="font-size: 15px; font-weight: bold; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" style="background-color: brown;"
+    class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Update Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Function to format and display date and time
+    function updateDateTime() {
+      const now = new Date();
+      const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+      const months = [
+        'Januari', 'Februari', 'Maret', 'April', 'Mey', 'Juni',
+        'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+      ];
+
+      const day = days[now.getDay()];
+      const date = now.getDate();
+      const month = months[now.getMonth()];
+      const year = now.getFullYear();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      const dateTimeString = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}:${seconds}`;
+      document.getElementById('dateTime').textContent = dateTimeString;
+    }
+
+    // Update every second
+    setInterval(updateDateTime, 1000);
+
+    // Initialize
+    updateDateTime();
+  </script>
+
+</body>
+
+</html>
